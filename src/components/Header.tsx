@@ -6,7 +6,12 @@ import {
   HiUserCircle,
 } from "react-icons/hi";
 import { MdLeaderboard } from "react-icons/md";
-const Header: React.FC = () => {
+import { snippets } from "../faker/index";
+
+const Header = () => {
+  const handleClick = () => {
+    console.log("Clicked");
+  };
   return (
     <header>
       <nav>
@@ -15,7 +20,7 @@ const Header: React.FC = () => {
           <span>typist</span>
         </div>
         <ul className="navbar">
-          <li>
+          <li onClick={handleClick}>
             <HiRefresh size={24} />
           </li>
           <li>

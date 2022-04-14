@@ -20,8 +20,11 @@ function App() {
       setCurrent(current + 1);
       let currentSpan: HTMLSpanElement =
         spanContainer.current.children[current];
+      console.log(code[current].charCodeAt(0), code[current]);
       if (key == code[current].charCodeAt(0)) {
         currentSpan.className += " correct";
+      } else if (currentSpan.textContent == "spa") {
+        console.log("Do nothing");
       } else {
         currentSpan.className += " wrong";
       }

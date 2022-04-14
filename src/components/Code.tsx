@@ -10,7 +10,13 @@ const Code = (props: PropType) => {
         if (c === "\n") {
           return <br key={index} />;
         }
-        if (c === "\t") return <span className="tab">spa</span>;
+        if (c === "\t") {
+          return (
+            <span className="tab" key={index}>
+              spa
+            </span>
+          );
+        }
         return <span key={index}>{c}</span>;
       })}
     </p>
