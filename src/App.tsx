@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { DiJsBadge } from "react-icons/di";
 import { IoReloadOutline } from "react-icons/io5";
-import { netWPM, randomSnippet, startTimer } from "./utils";
+import { checkSpecialChar, netWPM, randomSnippet, startTimer } from "./utils";
 import Code from "./components/Code";
 import Header from "./components/Header";
 
@@ -51,20 +51,25 @@ function App() {
       setCurrent(current + 1);
       let currentSpan: HTMLSpanElement =
         spanContainer.current.children[current];
-      if (key == code[current].charCodeAt(0)) {
-        currentSpan.className += " correct";
-      } else if (currentSpan.textContent == "spa") {
+      console.log(code[current], code[current].charCodeAt(0));
+      if (checkSpecialChar(code, current)) {
+        console.log("I made it here");
       } else {
-        if (
-          code[current].charCodeAt(0) !== 32 &&
-          code[current].charCodeAt(0) !== 10
-        )
-          setErrors(errors + 1);
-        currentSpan.className += " wrong";
-      }
-      if (current === code.length - 1) {
-        // calculate results
-        setTime((prevState) => ({ ...prevState, end: startTimer() }));
+        if (key == code[current].charCodeAt(0)) {
+          currentSpan.className += " correct";
+        } else if (currentSpan.textContent == "spa") {
+        } else {
+          if (
+            code[current].charCodeAt(0) !== 32 &&
+            code[current].charCodeAt(0) !== 10
+          )
+            setErrors(errors + 1);
+          currentSpan.className += " wrong";
+        }
+        if (current === code.length - 1) {
+          // calculate results
+          setTime((prevState) => ({ ...prevState, end: startTimer() }));
+        }
       }
     }
   }, [pressed]);
@@ -89,17 +94,19 @@ function App() {
 
   return (
     <div className="App">
-      <Header results={results} />
-      <div className="container">
-        <p className="lang">
-          <DiJsBadge color="#e2b714" />
-          <span>javascript</span>
-        </p>
-        <Code code={code} spanContainer={spanContainer} />
-      </div>
-      <div onClick={reset} className="reload">
-        <IoReloadOutline size={35} color="#e2b714" />
-      </div>
+      <main>
+        <Header results={results} />
+        <div className="container">
+          <p className="lang">
+            <DiJsBadge color="#e2b714" />
+            <span>javascript</span>
+          </p>
+          <Code code={code} spanContainer={spanContainer} />
+        </div>
+        <div onClick={reset} className="reload">
+          <IoReloadOutline size={35} color="#e2b714" />
+        </div>
+      </main>
     </div>
   );
 }
