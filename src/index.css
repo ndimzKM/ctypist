@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #323437;
+  background-color: #282828;
 }
 
 code {
@@ -49,7 +49,9 @@ ul {
 ul li {
   display: inline;
   padding-left: 15px;
-  color: #646669;
+  color: #e2b714;
+  font-weight: 600;
+  font-family: "Roboto Mono", sans-serif;
 }
 
 ul li:hover {
@@ -57,11 +59,14 @@ ul li:hover {
 }
 
 .container {
-  margin-top: 70px;
+  margin-top: 30px;
   color: #646669;
   font-family: "Roboto Mono", sans-serif;
   font-size: 1.2em;
   font-weight: 500;
+  background-color: #1d2021;
+  border-radius: 5px;
+  padding: 20px;
 }
 
 .lang {
@@ -90,4 +95,18 @@ ul li:hover {
 
 .tab {
   visibility: hidden;
+}
+
+.reload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+  scale: 1;
+  transition: scale 1s;
+  cursor: pointer;
+}
+
+.reload:hover {
+  scale: 1.5;
 }

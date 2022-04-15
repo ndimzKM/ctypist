@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { DiJsBadge } from "react-icons/di";
+import { IoReloadOutline } from "react-icons/io5";
 import { code } from "./faker/index";
 import Code from "./components/Code";
 import Header from "./components/Header";
@@ -48,6 +49,9 @@ function App() {
           <span>javascript</span>
         </p>
         <Code code={code} spanContainer={spanContainer} />
+      </div>
+      <div className="reload">
+        <IoReloadOutline size={35} color="#e2b714" />
       </div>
     </div>
   );

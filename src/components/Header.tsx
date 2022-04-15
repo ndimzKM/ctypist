@@ -20,21 +20,8 @@ const Header = () => {
           <span>typist</span>
         </div>
         <ul className="navbar">
-          <li onClick={handleClick}>
-            <HiRefresh size={24} />
-          </li>
-          <li>
-            <MdLeaderboard size={24} />
-          </li>
-          <li>
-            <HiInformationCircle size={24} />
-          </li>
-          <li>
-            <HiCog size={24} />
-          </li>
-          <li>
-            <HiUserCircle size={24} />
-          </li>
+          <li>WPM: 48</li>
+          <li>ACC: 99</li>
         </ul>
       </nav>
       {/*
