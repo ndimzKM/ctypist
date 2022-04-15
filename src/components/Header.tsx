@@ -1,17 +1,9 @@
 import { FaCopyright } from "react-icons/fa";
-import {
-  HiRefresh,
-  HiCog,
-  HiInformationCircle,
-  HiUserCircle,
-} from "react-icons/hi";
-import { MdLeaderboard } from "react-icons/md";
-import { snippets } from "../faker/index";
+type PropType = {
+  results: { wpm: number; acc: number };
+};
 
-const Header = () => {
-  const handleClick = () => {
-    console.log("Clicked");
-  };
+const Header = (props: PropType) => {
   return (
     <header>
       <nav>
@@ -20,19 +12,10 @@ const Header = () => {
           <span>typist</span>
         </div>
         <ul className="navbar">
-          <li>WPM: 48</li>
-          <li>ACC: 99</li>
+          <li>WPM: {props.results.wpm}</li>
+          <li>ACC: {props.results.acc}%</li>
         </ul>
       </nav>
-      {/*
-     Icons
-     1. Refresh - to get new set of source code
-     2. Leaderboard - to see rankings
-     3. About - about page
-     4. Settings - settings page
-     5. Login - login page
-
-      */}
     </header>
   );
 };
