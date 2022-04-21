@@ -8,5 +8,5 @@ const code2: string =
 const code3: string =
   'function append(name, value) {\n\tif (typeof value != "string")\n\t\tthrow new Error("value argument must be of type string");\n\tif (res.headers[name.toLowerCase()] == undefined) {\n\t\tres.setHeader(name, value);\n\t} else {\n\t\tres.headers[name.toLowerCase()] += value;\n\t}\n};';
 const code4: string =
-  'socket.on("WebhookEvent", (data) => {\n    socket.broadcast.emit("new message", {\n      username: socket.username,\n      message: data,\n    });\n  });\n  socket.on("disconnect", () => {\n    users -= 1;\n    console.log("Users: ", users);\n  });';
+  'socket.on("WebhookEvent", (data) => {\n\tsocket.broadcast.emit("new message", {\n\t\tusername: socket.username,\n\t\tmessage: data,\n\t});\n});\n\nsocket.on("disconnect", () => {\n\tusers -= 1;\n\tconsole.log("Users: ", users);\n  });';
 export const snippets: string[] = [code1, code, code2, code3, code4];
