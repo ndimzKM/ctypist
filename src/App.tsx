@@ -1,9 +1,9 @@
 import { useEffect, useState, useRef } from "react";
 import { DiJsBadge } from "react-icons/di";
 import { IoReloadOutline } from "react-icons/io5";
-import { checkSpecialChar, netWPM, randomSnippet, startTimer } from "./utils";
 import Code from "./components/Code";
 import Header from "./components/Header";
+import { checkSpecialChar, netWPM, randomSnippet, startTimer } from "./utils";
 
 type Time = {
   start: number;
