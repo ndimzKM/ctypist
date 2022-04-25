@@ -67,7 +67,6 @@ function App() {
           currentSpan.className += " wrong";
         }
         if (current === code.length - 1) {
-          // calculate results
           setTime((prevState) => ({ ...prevState, end: startTimer() }));
         }
       }
