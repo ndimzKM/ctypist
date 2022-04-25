@@ -55,9 +55,9 @@ function App() {
       if (checkSpecialChar(code, current)) {
         console.log("I made it here");
       } else {
-        if (key == code[current].charCodeAt(0)) {
+        if (key === code[current].charCodeAt(0)) {
           currentSpan.className += " correct";
-        } else if (currentSpan.textContent == "spa") {
+        } else if (currentSpan.textContent === "spa") {
         } else {
           if (
             code[current].charCodeAt(0) !== 32 &&
