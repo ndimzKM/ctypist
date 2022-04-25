@@ -25,5 +25,7 @@ export const randomSnippet = (): string => {
 };
 
 export const checkSpecialChar = (code: string, current: number): boolean => {
-  return code[current].charCodeAt(0) == 9 || code[current].charCodeAt(0) == 10;
+  return (
+    code[current].charCodeAt(0) === 9 || code[current].charCodeAt(0) === 10
+  );
 };
